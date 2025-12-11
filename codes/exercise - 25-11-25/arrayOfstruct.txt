@@ -1,0 +1,44 @@
+#include <stdio.h>
+
+typedef struct
+{
+  char name[20];
+  int health;
+  int score;
+} player;
+
+int maxScore(int score[5]);
+
+int main()
+{
+  player player[5] = {
+      {"asyed21", 50, 200},
+      {"red", 20, 60},
+      {"pussyDestroyer6969", 40, 140},
+      {"sheAintREAL34", 70, 800},
+      {"nahi", 100, 500}};
+
+  int pscore[5] = {0};
+
+  for (int i = 0; i < 5; i++)
+  {
+    pscore[i] = player[i].score;
+  }
+
+  int *ptrScore = &pscore;
+  printf("%d", maxScore(ptrScore));
+  return 0;
+}
+
+int maxScore(int score[5])
+{
+  int max = score[0];
+  for (int i = 1; i < 5; i++)
+  {
+    if (score[i] > max)
+    {
+      max = score[i];
+    }
+  }
+  return max;
+}

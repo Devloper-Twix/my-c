@@ -1,0 +1,36 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+  int n = 0;
+  float *arr = malloc(n * sizeof(float));
+
+  if (arr == NULL)
+  {
+    printf("Memory Error!!\n");
+    return 1;
+  }
+
+  printf("Total no. of number: ");
+  scanf("%d", &n);
+
+  for (int i = 0; i < n; i++)
+  {
+    printf("Enter num%d: ", (i + 1));
+    scanf("%f", &arr[i]);
+  }
+
+  printf("arr: [\t");
+
+  for (int i = 0; i < n; i++)
+  {
+    printf(" %.2f\t", arr[i]);
+  }
+
+  printf("]");
+
+  free(arr);
+  arr = NULL;
+  return 0;
+}

@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include <string.h>
+
+int main()
+{
+    char item[50] = "\0";
+    double price = 0, quantity = 0, total = 0;
+
+    printf("What item you would you like? ");
+    fgets(item, sizeof(item), stdin);
+    item[strlen(item) - 1] = '\0';
+
+    printf("What is the price of the item? $");
+    scanf("%lf", &price);
+
+    printf("How many would you like? ");
+    scanf("%lf", &quantity);
+
+    total = price * quantity;
+    printf("The total price of %ss/es will be: $%2.lf", item, total);
+
+    return 0;
+}

@@ -1,0 +1,11 @@
+#include <stdio.h>
+
+int main()
+{
+
+  int hours = 11;
+
+  printf("%d %s", hours, (hours < 12) ? "AM" : "PM");
+
+  return 0;
+}

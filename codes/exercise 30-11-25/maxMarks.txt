@@ -1,0 +1,51 @@
+#include <stdio.h>
+
+typedef struct
+{
+  char name[20];
+  int marks;
+} student;
+
+int max(int marks[]);
+
+int main()
+{
+  student students[5];
+
+  for (int i = 0; i < 5; i++)
+  {
+    printf("Student %d:\n  Name: ", (i + 1));
+    scanf(" %s", &students[i].name);
+    printf("  Marks: ");
+    scanf("%d", &students[i].marks);
+    printf("\n");
+  }
+  /*
+    for (int i = 0; i < 5; i++)
+    {
+      printf("\nStudent %d:\n  Name: %s\n  Marks: %d", (i + 1), students[i].name, students[i].marks);
+    }
+  */
+  int marks[5] = {0};
+  for (int i = 0; i < 5; i++)
+  {
+    marks[i] = students[i].marks;
+  }
+
+  printf("Max marks is: %d", max(marks));
+
+  return 0;
+}
+
+int max(int marks[])
+{
+  int temp = 0;
+  for (int i = 0; i < 5; i++)
+  {
+    if (marks[i] > temp)
+    {
+      temp = marks[i];
+    }
+  }
+  return temp;
+}

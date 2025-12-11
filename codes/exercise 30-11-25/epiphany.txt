@@ -1,0 +1,36 @@
+#include <stdio.h>
+#include <string.h>
+
+typedef struct
+{
+  char model[50];
+  int price;
+} Car;
+
+void discount(Car *c, int amount);
+
+int main()
+{
+  // i hate life. 9:10 PM
+  // life is good. 9:50 PM
+  // to whoever reads this code, know that life is good for bugs are only transient. 'twas my epiphany.
+  Car car1;
+  strcpy(car1.model, "Maruti Swift");
+  car1.price = 729500;
+  int amount = 0;
+
+  printf("Price is $%d of the %s\n", car1.price, car1.model);
+
+  printf("Enter Discount: $");
+  scanf("%d", &amount);
+
+  discount(&car1, amount);
+  printf("The price with discount applied is: %d", car1.price);
+
+  return 0;
+}
+
+void discount(Car *c, int amount)
+{
+  c->price -= amount;
+}

@@ -1,0 +1,40 @@
+#include <stdio.h>
+#include <ctype.h>
+
+int main()
+{
+    char userAns = '\0';
+    int points = 0;
+    char questions[][100] = {
+        {"Which planet is nicknamed the 'Gas Giant'?"},
+        {"Who was the first human to step on the moon?"},
+        {"What is a light-year?"},
+        {"Which planet is called the “Evening Star”?"},
+        {"What is the nucleus of a comet made of?"}};
+    char options[][100] = {
+        {"\nA) Saturn\nB) Jupiter\nC) Uranus\nD) Neptune"},
+        {"\nA) Yuri Gagarin\nB) Neil Armstrong\nC) Buzz Aldrin\nD) Michael Collins"},
+        {"\nA) Unit of time\nB) Unit of weight\nC) Distance light travels in a year\nD) Distance between stars"},
+        {"\nA) Venus\nB) Mars\nC) Mercury\nD) Jupiter"},
+        {"\nA) Gas and liquid\nB) Solid rock\nC) Ice, dust, and organic material\nD) Hot plasma"}};
+    char ansKey[] = {
+        'B', 'B', 'C', 'A', 'C'};
+    int count = sizeof(questions) / sizeof(questions[0]);
+
+    for (int i = 0; i < 5; i++)
+    {
+        printf("%s%s\n\n", questions[i], options[i]);
+        printf("Enter your choice: ");
+        scanf(" %c", &userAns);
+        userAns = toupper(userAns);
+        if (userAns == ansKey[i])
+        {
+            points++;
+        }
+        printf("\n");
+    }
+
+    printf("You got %d out of %d correct!", points, count);
+
+    return 0;
+}

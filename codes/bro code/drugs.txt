@@ -1,0 +1,42 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <time.h>
+
+char *drugs()
+{
+    int size = 7;
+    int i = rand() % size;
+
+    char **drugs = malloc(size * sizeof(char *));
+    drugs[0] = strdup("Methamphetamine");
+    drugs[1] = strdup("Cocaine");
+    drugs[2] = strdup("Heroin");
+    drugs[3] = strdup("Amphetamine");
+    drugs[4] = strdup("MDMA");
+    drugs[5] = strdup("Dextroamphetamine");
+    drugs[6] = strdup("Cannabis");
+
+    char *choice = strdup(drugs[i]);
+
+    for (int j = 0; j < size; j++)
+    {
+        free(drugs[j]);
+    }
+    free(drugs);
+
+    return choice;
+}
+
+int main()
+{
+    srand(time(NULL));
+
+    char *thing = drugs();
+    printf("Your Drug is: %s\n", thing);
+    free(thing);
+
+    system("pause");
+
+    return 0;
+}

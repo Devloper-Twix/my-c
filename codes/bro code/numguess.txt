@@ -1,0 +1,33 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int main()
+{
+    srand(time(NULL));
+
+    int i = rand() % 10 + 1, attempts = 10, win = 0, guess;
+
+    printf("Enter a number: ");
+    scanf("%d", &guess);
+
+    for (int j = 1; j < attempts; j++)
+    {
+        if (guess == i)
+        {
+            printf("You Win!\n");
+            win = 1;
+            break;
+        }
+        printf("Wrong :(\nEnter a number: ");
+        scanf("%d", &guess);
+        continue;
+    }
+
+    if (win == 0)
+    {
+        printf("Ran out of attempts!");
+    }
+
+    return 0;
+}

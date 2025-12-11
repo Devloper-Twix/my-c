@@ -1,0 +1,65 @@
+#include <stdio.h>
+
+typedef struct
+{
+  char *name;
+  float exp;
+} plyr;
+
+void swap(plyr *p1, plyr *p2);
+
+int main()
+{
+  plyr player1, player2;
+  player1.name = "red";
+  player1.exp = 210.5;
+  player2.name = "blue";
+  player2.exp = 670.0;
+
+  printf("player[1]:\n  name = %s\n  exp = %.1f\n", player1.name, player1.exp);
+  printf("player[2]:\n  name = %s\n  exp = %.1f\n\n\n", player2.name, player2.exp);
+  swap(&player1, &player2);
+  printf("player[1]:\n  name = %s\n  exp = %.1f\n", player1.name, player1.exp);
+  printf("player[2]:\n  name = %s\n  exp = %.1f\n", player2.name, player2.exp);
+
+  return 0;
+}
+
+void swap(plyr *p1, plyr *p2)
+{
+  plyr temp = *p1;
+  *p1 = *p2;
+  *p2 = temp;
+};
+
+typedef struct
+{
+  char *name;
+  float exp;
+} plyr;
+
+void swap(plyr *p1, plyr *p2);
+
+int main()
+{
+  plyr player1, player2;
+  player1.name = "red";
+  player1.exp = 210.5;
+  player2.name = "blue";
+  player2.exp = 670.0;
+
+  printf("player[1]:\n  name = %s\n  exp = %.1f\n", player1.name, player1.exp);
+  printf("player[2]:\n  name = %s\n  exp = %.1f\n\n\n", player2.name, player2.exp);
+  swap(&player1, &player2);
+  printf("player[1]:\n  name = %s\n  exp = %.1f\n", player1.name, player1.exp);
+  printf("player[2]:\n  name = %s\n  exp = %.1f\n", player2.name, player2.exp);
+
+  return 0;
+}
+
+void swap(plyr *p1, plyr *p2)
+{
+  plyr temp = *p1;
+  *p1 = *p2;
+  *p2 = temp;
+};

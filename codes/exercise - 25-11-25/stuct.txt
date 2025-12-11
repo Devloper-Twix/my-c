@@ -1,0 +1,24 @@
+#include <stdio.h>
+
+typedef struct
+{
+  char name[20];
+  int health;
+  int score;
+} player;
+
+int healPlayer(int *health);
+
+int main()
+{
+  player player1 = {"asyed21", 50, 200};
+  healPlayer(&player1.health);
+  printf("%d", player1.health);
+
+  return 0;
+}
+
+int healPlayer(int *health)
+{
+  return (*health) += 10;
+}

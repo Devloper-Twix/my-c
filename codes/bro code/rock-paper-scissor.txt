@@ -1,0 +1,71 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int getComputerChoice()
+{
+    return (rand() % 3) + 1;
+}
+
+void sltf(int n)
+{
+    switch (n)
+    {
+    case 1:
+        printf("rock\n");
+        break;
+    case 2:
+        printf("paper\n");
+        break;
+    case 3:
+        printf("scissor\n");
+        break;
+
+    default:
+        break;
+    }
+}
+
+void winCheck(int user, int computer)
+{
+    if (user == computer)
+    {
+        printf("You Draw!");
+    }
+    else if ((user == 1 && computer == 3) ||
+             (user == 2 && computer == 1) ||
+             (user == 3 && computer == 2))
+    {
+        printf("You Win!");
+    }
+
+    else
+    {
+        printf("You Lose!");
+    }
+}
+
+int main()
+{
+    srand(time(NULL));
+
+    printf("*** ROCK PAPER SCISSORS ***\nChoose an option\n1. ROCK\n2. PAPER\n3. SCISSORS\n");
+    int user = 0;
+    printf("Enter your choice: ");
+    scanf("%d", &user);
+    if (user > 3 || user < 1)
+    {
+        printf("Invalid!");
+        exit(0);
+    }
+    printf("Your choose ");
+    sltf(user);
+
+    int computer = getComputerChoice();
+    printf("Computer chooses ");
+    sltf(computer);
+
+    winCheck(user, computer);
+
+    return 0;
+}

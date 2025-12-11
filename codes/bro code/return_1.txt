@@ -1,0 +1,14 @@
+#include <stdio.h>
+
+int square(int n)
+{
+    return n * n;
+}
+
+int main()
+{
+    int a = square(10), b = square(67), c = square(69);
+    printf("%d,\t%d,\t%d", a, b, c);
+
+    return 0;
+}

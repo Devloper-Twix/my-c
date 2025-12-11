@@ -1,0 +1,36 @@
+#include <stdio.h>
+
+enum Difficulty
+{
+  EASY,
+  MEDIUM,
+  HARD
+};
+void func(enum Difficulty level);
+
+int main()
+{
+  enum Difficulty level = HARD;
+  func(level);
+
+  return 0;
+}
+
+void func(enum Difficulty level)
+{
+  switch (level)
+  {
+  case 0:
+    printf("Difficulty set to Easy. Pick HARD be a man.");
+    break;
+  case 1:
+    printf("Difficulty set to MEDIUM.");
+    break;
+  case 2:
+    printf("Difficulty set to HARD. Good luck.");
+    break;
+
+  default:
+    break;
+  }
+};

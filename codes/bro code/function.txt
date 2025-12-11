@@ -1,0 +1,17 @@
+#include <stdio.h>
+
+void birthday(char name[], int age)
+{
+    printf("Happy Birthday nga(%s)!\n", name);
+    printf("Nga(%s) you became %d!", name, age);
+}
+
+int main()
+{
+    char name[] = "Bro";
+    int age = 19;
+
+    birthday(name, age);
+
+    return 0;
+}

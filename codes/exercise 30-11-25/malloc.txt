@@ -1,0 +1,26 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+  int n = 0;
+  printf("Total Integers: ");
+  scanf("%d", &n);
+
+  int *arr = malloc(n * sizeof(int));
+  if (arr == NULL)
+  {
+    printf("Memory Error!");
+    return 1;
+  }
+
+  for (int i = 0; i < n; i++)
+  {
+    printf("int[%d] = ", i + 1);
+    scanf("%d", &arr[i]);
+  }
+  free(arr);
+  arr = NULL;
+
+  return 0;
+}

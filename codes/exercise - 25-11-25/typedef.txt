@@ -1,0 +1,22 @@
+#include <stdio.h>
+
+typedef long long i64;
+i64 sum(i64 arr[], int n);
+
+int main()
+{
+  i64 arr[3] = {6212333333, 748317817841734787, 67289130545333333339};
+  i64 result = sum(arr, 3);
+  printf("%d");
+  return 0;
+}
+
+i64 sum(i64 arr[], int n)
+{
+  i64 total = 0;
+  for (int i = 0; i < n; i++)
+  {
+    total += arr[i];
+  }
+  return total;
+}
